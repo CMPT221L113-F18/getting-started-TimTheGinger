@@ -9,7 +9,8 @@ Prof. Johnson
 
 <html>
     <header>
-        
+        <!-- Stylesheet link -->
+        <link rel="stylesheet" href="styles.css" type="text/css" />
     </header>
     
     <!-- The Main Part -->
@@ -19,6 +20,50 @@ Prof. Johnson
         <p>
             This app caluculates a heat index based upon a user inputted tempature as well as a relative humidity.
         </p>
+        
+        <form onsubmit="return false;">
+            <label>Enter the current tempature F&deg;:</label>
+            <input type="Number" id="tempText" placeholder="Tempature">
+            <br/>
+            
+            <label>Enter the relative humidity:</label>
+            <input type="Number" id="relHumText" placeholder="Relative Humidity">
+            <br/>
+            
+            <label id="outputLabel"></label>
+            <br/>
+            
+            <button type="button" onclick="heatIndexButton();">Submit</button>
+        </form>
+        
+        <!-- JavaScript goes here -->
+        <script type="text/javascript">
+            function heatIndexButton() {
+                /* get the tempature and rel humidity from textboxes in the html form */
+                var temp = document.querySelector('#tempText').value;
+                var relhum = document.querySelector('#relhumText').value;
+                
+                /* cast the tempature and rel humidity to a number bc js is bs */
+                temp = Number(temp);
+                relhum = Number(relhum);
+                
+                /* if the Number that was cast is NaN, fail and return an error, if 0 > relhum or 100 < relhum return an error, otherwise calculate the heat index and print it to the approprate label */
+                if(typeof temp === NaN || typeof relhum === NaN) {
+                    alert("Only numbers are acceptable input for the textboxes");
+                } else if (relhum > 100 || relhum < 0) {
+                    alert("Relative humidity must be a value between 0 to 100");
+                } else {
+                    /* rel humidity is now made into a percentage to work correctly */
+                    relhum = relhum / 100;
+                    
+                    var index = -42.379 + 2.04901523 * temp + 10.14333127 * relhum - 0.22475541 * temp * relhum - 0.00683783 * Math.pow(temp,2) - 0.05481717 * Math.pow(relhum,2) + 0.00122874 * Math.pow(temp,2) * relhum + 0.00085282 * temp * Math.pow(relhum,2) - 0.00000199 * Math.pow(temp,2) * Math.pow(relhum,2);
+                    
+                    var outputLabel = document.querySelector('#outputLabel');
+                    outputLabel.innerHTML = index;
+                }
+            }
+        </script>
+        
     </body>
     
     <footer>
