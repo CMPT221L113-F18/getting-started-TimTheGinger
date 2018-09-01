@@ -5,13 +5,20 @@ Fall 2018
 Prof. Johnson 
 -->
 
-<!Doctype HTML5>
+<!Doctype HTML>
 
-<html>
-    <header>
+<html lang="en-US">
+    <head>
+        <title>Heat Index Calculator</title>
+        <!-- meta tags -->
+        <meta charset="utf-8">
+        <meta name="description" content="A heat index calculator">
+        <meta name="keywords" content="Heat Index, calculator, tempature, relative humidity">
+        <meta name="author" content="Tim Polizzi">
+        
         <!-- Stylesheet link -->
-        <link rel="stylesheet" href="styles.css" type="text/css" />
-    </header>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+    </head>
     
     <!-- The Main Part -->
     <body>
@@ -22,22 +29,22 @@ Prof. Johnson
         </p>
         
         <form onsubmit="return false;">
-            <label>Enter the current tempature F&deg;:</label>
+            <label>Enter the current tempature F&deg; :</label>
             <input type="Number" id="tempText" placeholder="Tempature">
-            <br/>
+            <br>
             
             <label>Enter the relative humidity:</label>
             <input type="Number" id="relHumText" placeholder="Relative Humidity">
-            <br/>
+            <br>
             
             <label id="outputLabel"></label>
-            <br/>
+            <br>
             
             <button type="button" onclick="heatIndexButton();">Submit</button>
         </form>
         
         <!-- JavaScript goes here -->
-        <script type="text/javascript">
+        <script>
             function heatIndexButton() {
                 /* get the tempature and rel humidity from textboxes in the html form */
                 var temp = document.querySelector('#tempText').value;
@@ -63,10 +70,5 @@ Prof. Johnson
                 }
             }
         </script>
-        
     </body>
-    
-    <footer>
-        
-    </footer>
 </html>
