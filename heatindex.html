@@ -35,9 +35,13 @@ Prof. Johnson
             
             <label>Enter the relative humidity:</label>
             <input type="Number" id="relHumText" placeholder="Relative Humidity">
+            
+            <br>
             <br>
             
             <label id="outputLabel"></label>
+            
+            <br>
             <br>
             
             <button type="button" onclick="heatIndexButton();">Submit</button>
@@ -48,7 +52,7 @@ Prof. Johnson
             function heatIndexButton() {
                 /* get the tempature and rel humidity from textboxes in the html form */
                 var temp = document.querySelector('#tempText').value;
-                var relhum = document.querySelector('#relhumText').value;
+                var relhum = document.querySelector('#relHumText').value;
                 
                 /* cast the tempature and rel humidity to a number bc js is bs */
                 temp = Number(temp);

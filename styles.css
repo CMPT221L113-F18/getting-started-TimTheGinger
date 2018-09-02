@@ -1,0 +1,33 @@
+/* 
+Tim Polizzi
+Software Developement II 
+Fall 2018
+Prof. Johnson 
+*/
+
+html {
+    background-image: repeating-radial-gradient(limegreen, green, darkgreen);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    
+    color: ghostwhite;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+button {
+    background-color: lightgray;
+    border: 1px;
+    border-radius: 10%;
+    color: grey;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: inline-block;
+    font-size: 16px;
+}
+
+h1 {
+    padding-top: 20%;
+}
